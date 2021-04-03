@@ -16,7 +16,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install libwebkit2gtk-4.0-dev xvfb -y
 
       - name: Build for debian
-        run: xvfb-run ./script/build.sh
+        run: xvfb-run ./scripts/build.sh
 
       - name: Upload to release
         uses: JasonEtco/upload-to-release@master
@@ -30,14 +30,14 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Build for MacOS
-        run: ./script/build.sh
+        run: ./scripts/build.sh
 
   build-windows:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v1
       - name: Build for windows
-        run: ./script/build.bat
+        run: ./scripts/build.bat
 
       - name: Upload to release
         uses: JasonEtco/upload-to-release@master
