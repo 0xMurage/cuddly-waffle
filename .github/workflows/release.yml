@@ -19,9 +19,12 @@ jobs:
         run: xvfb-run ./scripts/build.sh
 
       - name: Upload to release
-        uses: JasonEtco/upload-to-release@master
+        uses: svenstaro/upload-release-action@2.2.1
         with:
-          args: ./build/webview
+          file: ./build/webview
+          tag: ${{ github.ref }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          overwrite: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
