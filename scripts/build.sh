@@ -2,6 +2,7 @@
 set -e
 
 DIR="$(cd "$(dirname "$0")/../" && pwd)"
+mkdir -p $DIR/build
 
 if [ "$(uname)" = "Darwin" ]; then
 	FLAGS="-DWEBVIEW_COCOA -std=c++11 -Wall -Wextra -pedantic -framework WebKit"
@@ -11,4 +12,4 @@ fi
 
 
 echo "Building app......"
-g++ main.c $FLAGS -o webview
+g++ main.c $FLAGS -o $DIR/build/webview
