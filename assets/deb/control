@@ -1,0 +1,9 @@
+Package: webview
+Version: 0.0.1
+Section: Browsers
+Priority: optional
+Architecture: all
+Essential: no
+Installed-Size: 1024
+Maintainer: murage@mimidots.com
+Description: Dummy webview loading DuckDuckGo

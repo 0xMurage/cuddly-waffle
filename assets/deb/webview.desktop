@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=DuckDuckGO on Webview
+GenericName=DuckDuckGoO Browser
+Comment=Webview demo
+Exec=webview %f
+Terminal=false
+Type=Application
+Depends: gtk+-3.0, webkit2gtk-4.0
