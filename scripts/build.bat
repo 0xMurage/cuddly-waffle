@@ -28,4 +28,4 @@ call "%vc_dir%\Common7\Tools\vsdevcmd.bat" -arch=x64 -host_arch=x64
 
 echo Building webview.exe (x64)
 
-cl -EHsc -GR -Zc:forScope -Zc:wchar_t -Fe:"%build_dir%\webview" "%src_dir%\main.c"
+cl -EHsc -GR -Zc:forScope -Zc:wchar_t -Fe:"%build_dir%\webview" /std:c++17 "%src_dir%\main.c"
