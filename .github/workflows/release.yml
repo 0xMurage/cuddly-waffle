@@ -37,15 +37,12 @@ jobs:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Build for windows
-        run: scripts/build.bat
+      - name: Install dependencies
+        run: |
+          choco install make -y
+          choco install mingw --version 8.1.0 -y
+          g++ --version
+          make --version
 
-      - name: Upload to release
-        uses: svenstaro/upload-release-action@2.2.1
-        with:
-          file: build/winx64/webview.exe
-          tag: ${{ github.ref }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          overwrite: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build for windows x64
+        run: make win64
