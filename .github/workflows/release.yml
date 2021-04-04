@@ -50,9 +50,7 @@ jobs:
           7z e CppWinRT.zip -y
 
       - name: Execute CppWinRT
-        run: |
-          Get-ChildItem
-          .\CppWinRT\bin\cppwinrt.exe -in local -verbose
+        run: cppwinrt.exe -in local -verbose
 
       - name: Build for windows x64
         run: make win64
