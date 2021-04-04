@@ -50,9 +50,7 @@ jobs:
           7z e CppWinRT.nupkg -y -o \CppWinRT\
 
       - name: Execute CppWinRT
-        run: |
-        dir
-        CppWinRT\bin\cppwinrt.exe -in local -verbose
+        run: \CppWinRT\bin\cppwinrt.exe -in local -verbose
 
       - name: Build for windows x64
         run: make win64
