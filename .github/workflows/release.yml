@@ -46,8 +46,8 @@ jobs:
 
       - name: Download & extract CppWinRT
         run: |
-          curl https://github.com/microsoft/cppwinrt/releases/download/2.0.210329.4/Microsoft.Windows.CppWinRT.2.0.210329.4.nupkg -L  --output CppWinRT.nupkg
-          7z e CppWinRT.nupkg -y -o \CppWinRT\
+          curl https://github.com/microsoft/cppwinrt/releases/download/2.0.210329.4/Microsoft.Windows.CppWinRT.2.0.210329.4.nupkg -L  --output CppWinRT.zip
+          7z e CppWinRT.zip -y
 
       - name: Execute CppWinRT
         run: \CppWinRT\bin\cppwinrt.exe -in local -verbose
