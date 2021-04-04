@@ -51,8 +51,7 @@ jobs:
 
       - name: Execute CppWinRT
         run: |
-          shell: cmd
-          dir
+          Get-ChildItem
           .\CppWinRT\cppwinrt.exe -in local -verbose
 
       - name: Build for windows x64
