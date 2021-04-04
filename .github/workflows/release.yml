@@ -47,12 +47,12 @@ jobs:
       - name: Download & extract CppWinRT
         run: |
           curl https://github.com/microsoft/cppwinrt/releases/download/2.0.210329.4/Microsoft.Windows.CppWinRT.2.0.210329.4.nupkg -L  --output CppWinRT.zip
-          7z x CppWinRT.zip -y
+          7z x CppWinRT.zip -o CppWinRT  -y
 
       - name: Execute CppWinRT
         run: |
           Get-ChildItem
-          .\CppWinRT\cppwinrt.exe -in local -verbose
+          .\CppWinRT\bin\cppwinrt.exe -in local -verbose
 
       - name: Build for windows x64
         run: make win64
