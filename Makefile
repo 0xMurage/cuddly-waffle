@@ -25,7 +25,7 @@ macos: main.c lib/webview.h
 
 win64: main.c lib/webview.h
 	mkdir -p  $(WINx64_OUTPUT_DIR)
-	g++ main.c -mwindows -L lib/dll/x64 -lwebview -lWebView2Loader -o $(WINx64_OUTPUT_DIR)/$(OUTPUT_FILENAME).exe
+	g++ main.c -mwindows -L lib/dll/x64 %WindowsSdkDir%include\%WindowsSDKVersion% -lwebview -lWebView2Loader -o $(WINx64_OUTPUT_DIR)/$(OUTPUT_FILENAME).exe
 	cp lib/dll/x64/ $(WINx64_OUTPUT_DIR)/
 
 
