@@ -18,9 +18,10 @@ deb: main.c lib/webview.h
 
 macos: main.c lib/webview.h
 	mkdir -p  $(MacOS_OUTPUT_DIR)/MacOS  $(MacOS_OUTPUT_DIR)/Resources
-	g++ main.c -std=c++11  -Wall -Wextra -pedantic -framework Webkit  -o $(MacOS_OUTPUT_DIR)/MacOS/$(OUTPUT_FILENAME)
 	cp $(ASSETS_DIR)/macos/Info.plist $(MacOS_OUTPUT_DIR)
-	cp $(ASSETS_DIR)/macos/resources/ $(MacOS_OUTPUT_DIR)/Resources/
+	cp -r $(ASSETS_DIR)/macos/resources/ $(MacOS_OUTPUT_DIR)/Resources/
+	g++ main.c -std=c++11  -Wall -Wextra -pedantic -framework Webkit  -o $(MacOS_OUTPUT_DIR)/MacOS/$(OUTPUT_FILENAME)
+
 
 win64: main.c lib/webview.h
 	mkdir -p  $(WINx64_OUTPUT_DIR)
