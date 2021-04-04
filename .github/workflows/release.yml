@@ -33,7 +33,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build for MacOS
-        run: make mac
+        run: make macos
 
   build-windows:
     runs-on: windows-latest
